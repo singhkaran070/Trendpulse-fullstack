@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TrendPulse - Stay updated with the latest trending news and current events"
+    />
+    <meta
+      name="keywords"
+      content="news, trending, current events, technology, politics, sports"
+    />
+    <meta name="author" content="Karan Singh" />
+
+    <!-- Open Graph meta tags for social media -->
+    <meta property="og:title" content="TrendPulse News" />
+    <meta
+      property="og:description"
+      content="Stay updated with the latest trending news and current events"
+    />
+    <meta property="og:type" content="website" />
+
+    <title>TrendPulse - Latest News & Trending Stories</title>
+
+    <!-- Favicon Setup -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="assets/favicon-48x48.png"
+    />
+
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsMediaOrganization",
+        "name": "TrendPulse",
+        "url": "https://trendpulse.com",
+        "description": "Latest news and trending stories"
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Loading spinner -->
+    <div id="loading-spinner" class="loading-spinner" aria-hidden="true">
+      <div class="spinner"></div>
+      <p>Loading latest news...</p>
+    </div>
+
+    <!-- 🌐 Navbar -->
+    <header class="navbar" role="banner">
+      <div class="navbar-container">
+        <div class="logo">
+          <img
+            src="assets/logo.png"
+            alt="TrendPulse Logo"
+            width="36"
+            height="36"
+          />
+          <span>TrendPulse</span>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="categories desktop-nav" aria-label="News categories">
+          <button
+            data-category="all"
+            class="filter-btn active"
+            aria-pressed="true"
+          >
+            All
+          </button>
+          <button data-category="Tech" class="filter-btn" aria-pressed="false">
+            Tech
+          </button>
+          <button
+            data-category="Politics"
+            class="filter-btn"
+            aria-pressed="false"
+          >
+            Politics
+          </button>
+          <button
+            data-category="Finance"
+            class="filter-btn"
+            aria-pressed="false"
+          >
+            Finance
+          </button>
+          <button
+            data-category="Health"
+            class="filter-btn"
+            aria-pressed="false"
+          >
+            Health
+          </button>
+          <button
+            data-category="Sports"
+            class="filter-btn"
+            aria-pressed="false"
+          >
+            Sports
+          </button>
+          <button
+            data-category="Entertainment"
+            class="filter-btn"
+            aria-pressed="false"
+          >
+            Entertainment
+          </button>
+        </nav>
+
+        <!-- Mobile Navigation Toggle -->
+        <button
+          class="mobile-menu-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Theme Switcher -->
+        <div class="theme-switcher">
+          <label class="switch-label" for="darkModeToggle">
+            <input
+              type="checkbox"
+              id="darkModeToggle"
+              aria-label="Toggle dark mode"
+            />
+            <span class="switch-slider"></span>
+            <span class="switch-text" aria-hidden="true">🌙</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <nav class="mobile-nav" aria-label="Mobile news categories">
+        <button
+          data-category="all"
+          class="filter-btn mobile-filter active"
+          aria-pressed="true"
+        >
+          All
+        </button>
+        <button
+          data-category="Tech"
+          class="filter-btn mobile-filter"
+          aria-pressed="false"
+        >
+          Tech
+        </button>
+        <button
+          data-category="Politics"
+          class="filter-btn mobile-filter"
+          aria-pressed="false"
+        >
+          Politics
+        </button>
+        <button
+          data-category="Finance"
+          class="filter-btn mobile-filter"
+          aria-pressed="false"
+        >
+          Finance
+        </button>
+        <button
+          data-category="Health"
+          class="filter-btn mobile-filter"
+          aria-pressed="false"
+        >
+          Health
+        </button>
+        <button
+          data-category="Sports"
+          class="filter-btn mobile-filter"
+          aria-pressed="false"
+        >
+          Sports
+        </button>
+        <button
+          data-category="Entertainment"
+          class="filter-btn mobile-filter"
+          aria-pressed="false"
+        >
+          Entertainment
+        </button>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- 🏥 Hero Section -->
+      <section class="hero" aria-label="Featured story">
+        <div class="hero-image-container">
+          <img
+            src="assets/hero.jpg"
+            alt="Featured: AI Reshaping Healthcare"
+            class="hero-img"
+            loading="eager"
+          />
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+          <h1>AI Reshaping Healthcare</h1>
+          <p>
+            How machine learning is improving patient outcomes across the U.S.
+          </p>
+          <button class="hero-cta" aria-label="Read full story">
+            Read More
+          </button>
+        </div>
+      </section>
+
+      <!-- 🔥 Trending Carousel -->
+      <section class="trending-carousel fade-in" aria-label="Trending news">
+        <div class="section-header">
+          <h2>Trending Now</h2>
+          <div class="carousel-controls">
+            <button
+              id="prevSlide"
+              class="carousel-btn"
+              aria-label="Previous trending story"
+            >
+              ‹
+            </button>
+            <button
+              id="nextSlide"
+              class="carousel-btn"
+              aria-label="Next trending story"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+        <div
+          id="trendingContainer"
+          class="carousel-container"
+          role="region"
+          aria-live="polite"
+        >
+          <!-- Trending content will be loaded here -->
+        </div>
+        <div
+          class="carousel-dots"
+          id="carouselDots"
+          role="tablist"
+          aria-label="Trending stories navigation"
+        >
+          <!-- Dots will be generated dynamically -->
+        </div>
+      </section>
+
+      <!-- 🗂️ Category Grid -->
+      <section class="category-grid fade-in" aria-label="Latest headlines">
+        <h2>Latest Headlines</h2>
+        <div class="filter-controls">
+          <select id="sortBy" aria-label="Sort articles by">
+            <option value="date">Latest First</option>
+            <option value="popularity">Most Popular</option>
+            <option value="title">Alphabetical</option>
+          </select>
+          <button
+            id="refreshArticles"
+            class="refresh-btn"
+            aria-label="Refresh articles"
+          >
+            <span class="refresh-icon">🔄</span> Refresh
+          </button>
+        </div>
+        <div id="gridContainer" class="grid-container" role="main">
+          <!-- Articles will be loaded here -->
+        </div>
+        <div id="loadMoreContainer" class="load-more-container">
+          <button id="loadMoreBtn" class="load-more-btn">
+            Load More Articles
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- 🔁 Refresh Alert -->
+    <div
+      class="update-alert"
+      id="updateAlert"
+      role="alert"
+      aria-live="assertive"
+    >
+      <span>🛎 New articles available.</span>
+      <button id="refreshBtn" class="alert-btn">Refresh</button>
+      <button
+        id="dismissAlert"
+        class="alert-btn dismiss"
+        aria-label="Dismiss alert"
+      >
+        ×
+      </button>
+    </div>
+
+    <!-- 📬 Newsletter Modal -->
+    <div
+      class="newsletter-modal"
+      id="newsletterModal"
+      role="dialog"
+      aria-labelledby="newsletter-title"
+      aria-hidden="true"
+    >
+      <div class="modal-content">
+        <button
+          class="close-btn"
+          id="closeModal"
+          aria-label="Close newsletter signup"
+        >
+          &times;
+        </button>
+        <h2 id="newsletter-title">📬 Join TrendPulse Community</h2>
+        <p>
+          Get daily updates on the hottest headlines—curated and summarized.
+        </p>
+        <form id="newsletterForm">
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="Enter your email"
+            required
+            aria-label="Email address"
+          />
+          <button type="submit" class="submit-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 🔖 Bookmark Modal -->
+    <div
+      class="newsletter-modal"
+      id="bookmarkModal"
+      role="dialog"
+      aria-labelledby="bookmark-title"
+      aria-hidden="true"
+    >
+      <div class="modal-content">
+        <button
+          class="close-btn"
+          id="closeBookmark"
+          aria-label="Close bookmarks"
+        >
+          &times;
+        </button>
+        <h2 id="bookmark-title">🔖 Saved Articles</h2>
+        <div id="savedList" class="saved-articles">
+          <p class="empty-state">
+            No saved articles yet. Start bookmarking articles to see them here!
+          </p>
+        </div>
+        <div class="bookmark-actions">
+          <button id="clearBookmarks" class="clear-btn">Clear All</button>
+          <button id="exportBookmarks" class="export-btn">Export</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ Toast Notification -->
+    <div class="toast" id="toast" role="alert" aria-live="polite">
+      <span class="toast-message">✅ Action completed!</span>
+      <button class="toast-close" aria-label="Close notification">×</button>
+    </div>
+
+    <!-- 👣 Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#" id="testTrigger">Join Community</a>
+          <a href="#" id="viewBookmarks">View Saved</a>
+          <a href="#" id="aboutLink">About</a>
+          <a href="#" id="contactLink">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" aria-label="Follow us on Twitter">🐦</a>
+          <a href="#" aria-label="Follow us on Facebook">📘</a>
+          <a href="#" aria-label="Follow us on LinkedIn">💼</a>
+        </div>
+        <p>&copy; 2025 TrendPulse. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Error Modal -->
+    <div
+      class="error-modal"
+      id="errorModal"
+      role="dialog"
+      aria-labelledby="error-title"
+      aria-hidden="true"
+    >
+      <div class="modal-content">
+        <button
+          class="close-btn"
+          id="closeError"
+          aria-label="Close error message"
+        >
+          &times;
+        </button>
+        <h2 id="error-title">⚠️ Something went wrong</h2>
+        <p id="errorMessage">
+          We're having trouble loading the content. Please try again.
+        </p>
+        <button id="retryBtn" class="retry-btn">Retry</button>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
