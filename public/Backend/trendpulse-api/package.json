@@ -1,0 +1,30 @@
+{
+  "name": "trendpulse-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "news",
+    "api",
+    "trendpulse"
+  ],
+  "author": "Karan Singh",
+  "license": "ISC",
+  "description": "TrendPulse News API Backend",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.2.0",
+    "helmet": "^7.1.0",
+    "node-cache": "^5.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
